@@ -1,0 +1,12 @@
+#!groovy
+
+@Library("Infrastructure")
+
+def type = "java"
+def product = "hmi"
+def component = "case-hq-emulator"
+
+withPipeline(type, product, component) {
+    
+    enableSlackNotifications('#hmi-build-notices')
+}

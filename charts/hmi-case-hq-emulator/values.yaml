@@ -1,0 +1,15 @@
+java:
+  applicationPort: 4550
+  image: 'hmctspublic.azurecr.io/rpe/spring-boot-template:latest'
+  ingressHost: hmi-case-hq-emulator-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+  aadIdentityName: hmi
+#  Uncomment once the vault containing the app insights key has been set up
+keyVaults:
+    hmi-shared-kv-{{ .Values.global.environment }}:
+      excludeEnvironmentSuffix: false
+      resourceGroup: hmi-sharedservices-{{ .Values.global.environment }}-rg
+      usePodIdentity: true
+      secrets:
+        - casehqemulator-storageaccount-key
+        - casehqemulator-storageaccount-name  
+environment:
