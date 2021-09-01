@@ -10,6 +10,6 @@ keyVaults:
       resourceGroup: hmi-sharedservices-{{ .Values.global.environment }}-rg
       usePodIdentity: true
       secrets:
-        - casehqemulator-storageaccount-key
-        - casehqemulator-storageaccount-name  
+        - hmisharedinfrasa-storageaccount-key
+        - hmisharedinfrasa-storageaccount-name  
 environment:
