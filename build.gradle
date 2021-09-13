@@ -109,6 +109,7 @@ jacocoTestReport {
 }
 
 //project.tasks['sonarqube'].dependsOn jacocoTestReport
+
 sonarqube {
   properties {
     property "sonar.projectName", "Reform :: spring-boot-template"
