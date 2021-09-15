@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 #
 # Script to initialise project by executing steps as follows:
 #   - Replace port number
@@ -37,12 +37,6 @@ done
 
 #update maintainer name
 for i in "charts/rpe-spring-boot-template/Chart.yaml"
-do
-  perl -i -pe "s/rpe/$product_name/g" ${i}
-done
-
-#update app insights config
-for i in "src/main/resources/application.yaml"
 do
   perl -i -pe "s/rpe/$product_name/g" ${i}
 done
