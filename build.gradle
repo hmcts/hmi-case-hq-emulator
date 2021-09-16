@@ -83,7 +83,7 @@ task smoke(type: Test) {
   testClassesDirs = sourceSets.smokeTest.output.classesDirs
   classpath = sourceSets.smokeTest.runtimeClasspath
 }
-
+/*
 checkstyle {
   maxWarnings = 0
   toolVersion = '8.29'
@@ -98,6 +98,7 @@ pmd {
   ruleSets = []
   ruleSetFiles = files("config/pmd/ruleset.xml")
 }
+*/
 
 jacocoTestReport {
   executionData(test, integration)
