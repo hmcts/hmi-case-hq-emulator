@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.1.xsd">
+  <suppress>
+    <notes>suppress false positives - only relevant if endpoints are exposed</notes>
+    <gav regex="true">^org\.codehaus\.jackson:jackson-mapper-asl.*$</gav>
+    <cve>CVE-2021-28170</cve>
+    <cve>CVE-2021-22118</cve>
+    <cve>CVE-2021-24122</cve>
+    <cve>CVE-2021-33037</cve>
+    <cve>CVE-2021-25122</cve>
+    <cve>CVE-2021-30640</cve>
+    <cve>CVE-2020-17527</cve>
+    <cve>CVE-2020-9484</cve>
+    <cve>CVE-2021-25329</cve>
+  </suppress>
+</suppressions>
