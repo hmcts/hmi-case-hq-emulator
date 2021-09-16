@@ -9,4 +9,16 @@
     <cve>CVE-2018-1258</cve>
   </suppress>
 
+  <suppress>
+    <cve>CVE-2021-28170</cve>
+    <cve>CVE-2021-22118</cve>
+    <cve>CVE-2021-24122</cve>
+    <cve>CVE-2021-33037</cve>
+    <cve>CVE-2021-25122</cve>
+    <cve>CVE-2021-30640</cve>
+    <cve>CVE-2020-17527</cve>
+    <cve>CVE-2020-9484</cve>
+    <cve>CVE-2021-25329</cve>
+  </suppress>
+
 </suppressions>

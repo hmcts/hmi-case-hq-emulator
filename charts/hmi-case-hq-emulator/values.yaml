@@ -1,7 +1,7 @@
 java:
   applicationPort: 4550
+  ingressHost: hmi-case-hq-emulator.{{ .Values.global.environment }}.platform.hmcts.net
   image: 'sdshmctspublic.azurecr.io/hmi/case-hq-emulator:latest'
-  ingressHost: hmi-case-hq-emulator-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
   aadIdentityName: hmi
 #  Uncomment once the vault containing the app insights key has been set up
 keyVaults:
