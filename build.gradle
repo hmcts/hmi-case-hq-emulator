@@ -1,8 +1,8 @@
 plugins {
   id 'application'
-  //id 'checkstyle'
-  //id 'pmd'
-  //id 'jacoco'
+  /*id 'checkstyle'
+  id 'pmd'*/
+  id 'jacoco'
   id 'io.spring.dependency-management' version '1.0.10.RELEASE'
   id 'org.springframework.boot' version '2.3.4.RELEASE'
   id 'org.owasp.dependencycheck' version '6.0.3'
@@ -83,40 +83,41 @@ task smoke(type: Test) {
   testClassesDirs = sourceSets.smokeTest.output.classesDirs
   classpath = sourceSets.smokeTest.runtimeClasspath
 }
-
-/*checkstyle {
+/*
+checkstyle {
   maxWarnings = 0
   toolVersion = '8.29'
   getConfigDirectory().set(new File(rootDir, 'config/checkstyle'))
-}*/
+}
 
-/*pmd {
+pmd {
   toolVersion = "6.18.0"
   sourceSets = [sourceSets.main, sourceSets.test, sourceSets.functionalTest, sourceSets.integrationTest, sourceSets.smokeTest]
   reportsDir = file("$project.buildDir/reports/pmd")
   // https://github.com/pmd/pmd/issues/876
   ruleSets = []
   ruleSetFiles = files("config/pmd/ruleset.xml")
-}*/
+}
+*/
 
-/*jacocoTestReport {
-  executionData(test, integration)
+jacocoTestReport {
+  executionData(test)
   reports {
     xml.enabled = true
     csv.enabled = false
     xml.destination file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml")
   }
-}*/
+}
 
-//project.tasks['sonarqube'].dependsOn jacocoTestReport
-/*
+project.tasks['sonarqube'].dependsOn jacocoTestReport
+
 sonarqube {
   properties {
-    property "sonar.projectName", "Reform :: spring-boot-template"
-    property "sonar.projectKey", "uk.gov.hmcts.reform:spring-boot-template"
+    property "sonar.projectName", "HMI Case HQ Emulator"
+    property "sonar.projectKey", "uk.gov.hmcts.reform:_HMI_hmi-case-hq-emulator_master"
     property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.destination.path}"
   }
-}*/
+}
 
 // before committing a change, make sure task still works
 dependencyUpdates {
