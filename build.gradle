@@ -10,7 +10,8 @@ plugins {
   id 'org.sonarqube' version '3.0'
 }
 
-group = 'uk.gov.hmcts.reform'
+group = 'uk.gov.hmcts.reform.casehqemulator'
+mainClassName = 'uk.gov.hmcts.reform.casehqemulator.Application'
 version = '0.0.1'
 
 allprojects {
@@ -212,7 +213,6 @@ dependencies {
   smokeTestImplementation sourceSets.main.runtimeClasspath
 }
 
-mainClassName = 'uk.gov.hmcts.reform.casehqemulator.Application'
 
 bootJar {
   getArchiveFileName().set(provider {
