@@ -3,13 +3,15 @@ java:
   ingressHost: hmi-case-hq-emulator.{{ .Values.global.environment }}.platform.hmcts.net
   image: 'sdshmctspublic.azurecr.io/hmi/case-hq-emulator:latest'
   aadIdentityName: hmi
-#  Uncomment once the vault containing the app insights key has been set up
-keyVaults:
-    hmi-shared-kv-{{ .Values.global.environment }}:
+  #  Uncomment once the vault containing the app insights key has been set up
+  keyVaults:
+    hmi-shared-kv:
       excludeEnvironmentSuffix: false
       resourceGroup: hmi-sharedservices-{{ .Values.global.environment }}-rg
       usePodIdentity: true
       secrets:
-        - hmisharedinfrasa-storageaccount-key
-        - hmisharedinfrasa-storageaccount-name  
-environment:
+        - name: hmisharedinfrasa-storageaccount-key
+          alias: STORAGE_KEY
+        - name: hmisharedinfrasa-storageaccount-name
+          alias: STORAGE_NAME
+  environment:
